@@ -1,5 +1,9 @@
 <?php
 
+use App\Livewire\Components\Dashboard;
+use App\Livewire\Components\Money;
+use App\Livewire\Components\Product;
+use App\Livewire\Components\Report;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Dashboard::class)->name('home');
+Route::get('/money', Money::class)->name('money');
+Route::get('/product', Product::class)->name('product');
+Route::get('/report', Report::class)->name('report');
